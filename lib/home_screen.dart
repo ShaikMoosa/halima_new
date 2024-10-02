@@ -28,14 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
 
-            // Display user information
-            if (user != null) ...[
-              if (user.photoURL != null)
-                Image.network(user.photoURL!),
-              Text(user.email ?? "No Email"),
-              Text(user.displayName ?? "No Name"),
-            ],
-
             // Logout button
             MyButtons(
               onTap: () async {
