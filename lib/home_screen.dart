@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/button.dart';
 import 'package:myapp/google_auth.dart';
 import 'login.dart';
+import 'settings.dart'; // Import the settings page
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,6 +19,22 @@ class _HomeScreenState extends State<HomeScreen> {
     User? user = FirebaseAuth.instance.currentUser;
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Home"),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              // Navigate to the settings page
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => SettingsPage(),
+                ),
+              );
+            },
+          ),
+        ],
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -27,13 +44,12 @@ class _HomeScreenState extends State<HomeScreen> {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
-
             // Logout button
             MyButtons(
               onTap: () async {
                 // Perform the Google sign-out
                 await FirebaseServices().googleSignOut();
-                
+
                 // Perform Firebase sign-out (for email/password users)
                 await FirebaseAuth.instance.signOut();
 
