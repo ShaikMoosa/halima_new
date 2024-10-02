@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: height / 2.7,
+                  height: height / 3.6,
                   child: Image.asset('images/halima.png'),
                 ),
                 TextFieldInput(
@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(0, 0, 0, 0)),
+                    style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 0, 0, 0)),
                     onPressed: () async {
                       await FirebaseServices().signInWithGoogle();
                       // Ensure the widget is still mounted before using context
@@ -139,7 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 10, left: 100),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const Text("Don't have an account? "),
                       GestureDetector(
