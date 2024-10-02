@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "592511334882",
+    "project_id": "halima-91d5d",
+    "storage_bucket": "halima-91d5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592511334882:android:cc21afca82397e25e9a1bb",
+        "android_client_info": {
+          "package_name": "com.example.halima"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592511334882-26dfe1aogmqj2edqt0ulmghl7qspbrnm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXXH-loevdIQmtdO1WUzJjH6NdmuD3si0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592511334882-26dfe1aogmqj2edqt0ulmghl7qspbrnm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
