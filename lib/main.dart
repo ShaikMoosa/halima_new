@@ -1,31 +1,68 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'login.dart'; // Ensure this is the correct path to your login screen
-import 'home_screen.dart'; // Ensure this is the correct path to your home screen
+import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'week_provider.dart';
+import 'user_input_screen.dart';
+import 'home_screen.dart';
+import 'view_progress_screen.dart';
+import 'login.dart'; // Create a separate screen for login
 
-Future<void> main() async {
-  // Initialize Firebase
+// Ensure Firebase is initialized before the app runs
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  
-  // Run your app
-  runApp(const MyApp());
+  await Firebase.initializeApp(); // Initialize Firebase
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => WeekProvider()..loadWeeksData()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
+// The main app widget
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // Define the initial route
-      initialRoute: '/login',
+      title: 'Pregnancy Tracker',
+      theme: ThemeData(
+        primaryColor: Colors.pink.shade300,
+        scaffoldBackgroundColor: Colors.pink.shade50,
+        fontFamily: 'Arial',
+      ),
+      home: AuthWrapper(), // Use a wrapper to handle authentication state
       routes: {
-        '/login': (context) => const LoginScreen(), // Login Screen Route
-        '/home': (context) => const HomeScreen(), // Home Screen Route
+        '/login': (context) => const LoginScreen(),
+        '/home': (context) => const HomeScreen(),
+        '/viewProgress': (context) => const ViewProgressScreen(),
       },
-      home: const LoginScreen(), // Set the initial screen to the login screen
+    );
+  }
+}
+
+// Wrapper to check FirebaseAuth state
+class AuthWrapper extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, snapshot) {
+        // If Firebase is still initializing, show a loading screen
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        // If user is logged in, navigate to UserInputScreen or HomeScreen
+        if (snapshot.hasData) {
+          return const UserInputScreen(); // Replace with the screen you want after login
+        }
+        // If user is not logged in, navigate to the LoginScreen
+        return const LoginScreen();
+      },
     );
   }
 }

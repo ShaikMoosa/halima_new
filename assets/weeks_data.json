@@ -1,0 +1,107 @@
+[
+  {
+    "weekRange": "1-4",
+    "size": "0.1 - 0.2 inches",
+    "fruit": "Poppy seed",
+    "babyGrowth": "Conception occurs, and the fertilized egg travels down the fallopian tube to implant in the uterine lining. The embryo begins to form, including the development of the neural tube.",
+    "motherSymptoms": "Many women may not yet realize they are pregnant during these weeks. Some may experience mild cramping or spotting due to implantation. Otherwise, there may be no noticeable symptoms."
+  },
+  {
+    "weekRange": "5",
+    "size": "0.13 inches",
+    "fruit": "Apple seed",
+    "babyGrowth": "Major organs such as the heart begin to develop. The neural tube closes, and the foundation for the brain and spinal cord is laid.",
+    "motherSymptoms": "Some women may experience fatigue, nausea, breast tenderness, and increased urination frequency. Morning sickness might start around this time."
+  },
+  {
+    "weekRange": "6",
+    "size": "0.25 inches",
+    "fruit": "Lentil",
+    "babyGrowth": "Facial features begin to form, and limb buds emerge.",
+    "motherSymptoms": "Symptoms like morning sickness and fatigue may intensify. Some women might experience food aversions or cravings."
+  },
+  {
+    "weekRange": "7-8",
+    "size": "0.5 - 0.6 inches",
+    "fruit": "Blueberry",
+    "babyGrowth": "Limbs continue to develop, and fingers and toes start to emerge. Major organs like the heart, liver, kidneys, and lungs begin to form.",
+    "motherSymptoms": "Nausea and fatigue may still be present. Some women may notice changes in their skin, such as acne or darkening of the areolas."
+  },
+  {
+    "weekRange": "9-10",
+    "size": "0.9 - 1.2 inches",
+    "fruit": "Grape",
+    "babyGrowth": "The embryo transitions into a fetus, and major organs continue to develop. External genitalia start to differentiate.",
+    "motherSymptoms": "Nausea and fatigue may persist. Some women might experience mood swings or heightened emotions."
+  },
+  {
+    "weekRange": "11-12",
+    "size": "1.6 - 2 inches",
+    "fruit": "Lime",
+    "babyGrowth": "The fetus grows rapidly, and facial features become more defined. Fingers and toes are fully formed.",
+    "motherSymptoms": "Symptoms like nausea and fatigue may start to improve for some women. Some may start to show a baby bump as the uterus expands."
+  },
+  {
+    "weekRange": "13-14",
+    "size": "2.9 - 3.4 inches",
+    "fruit": "Lemon",
+    "babyGrowth": "The fetus continues to grow significantly, and facial features become more distinct. Fetal movements may begin to be felt by the mother.",
+    "motherSymptoms": "Nausea and fatigue may start to improve for many women. Some may experience increased energy levels and a decrease in mood swings."
+  },
+  {
+    "weekRange": "15-16",
+    "size": "4 - 4.6 inches",
+    "fruit": "Avocado",
+    "babyGrowth": "The fetus continues to grow, and its movements become more coordinated. Gender may be determined via ultrasound.",
+    "motherSymptoms": "Some women may experience round ligament pain as the uterus expands. Heartburn and indigestion might become more common."
+  },
+  {
+    "weekRange": "17-20",
+    "size": "5.1 - 6.5 inches",
+    "fruit": "Bell pepper",
+    "babyGrowth": "The fetus grows rapidly, and its movements become more apparent. Vernix, a protective substance, starts to cover the skin.",
+    "motherSymptoms": "Some women may start to feel 'quickening,' or fetal movements. The uterus continues to expand, causing discomfort and increased urinary frequency."
+  },
+  {
+    "weekRange": "21-24",
+    "size": "10.5 - 12 inches",
+    "fruit": "Papaya",
+    "babyGrowth": "Fetal movements become more distinct, and the fetus develops more defined sleep patterns. Lung development continues.",
+    "motherSymptoms": "Some women may experience leg cramps, backaches, and swelling in the feet and ankles. Braxton Hicks contractions might occur, but they are typically irregular and painless."
+  },
+  {
+    "weekRange": "25-26",
+    "size": "13 - 14 inches",
+    "fruit": "Cucumber",
+    "babyGrowth": "The fetus continues to gain weight rapidly, and its organs mature further. Eyelids begin to open.",
+    "motherSymptoms": "Some women may experience shortness of breath as the uterus expands and puts pressure on the diaphragm. Sleep disturbances might become more common."
+  },
+  {
+    "weekRange": "27-30",
+    "size": "15 - 17 inches",
+    "fruit": "Eggplant",
+    "babyGrowth": "The fetus continues to grow significantly, and fat stores increase. Lung development continues, and the fetus may respond to external sounds.",
+    "motherSymptoms": "Some women may experience Braxton Hicks contractions more frequently. Backaches, pelvic pressure, and difficulty sleeping may persist or worsen."
+  },
+  {
+    "weekRange": "31-34",
+    "size": "18 - 20 inches",
+    "fruit": "Pineapple",
+    "babyGrowth": "The fetus continues to gain weight rapidly, and its organs mature further. Fetal movements may become less frequent but more pronounced.",
+    "motherSymptoms": "Braxton Hicks contractions may become more noticeable and frequent. Discomfort due to the baby's position may increase, including pressure on the bladder and pelvis."
+  },
+  {
+    "weekRange": "35-38",
+    "size": "19 - 21 inches",
+    "fruit": "Watermelon",
+    "babyGrowth": "The fetus settles into position for birth, typically with the head down. Fat continues to accumulate under the skin.",
+    "motherSymptoms": "Increased pressure on the pelvis and bladder may cause more frequent urination and discomfort. Some women may experience increased vaginal discharge or spotting as the cervix prepares for labor."
+  },
+  {
+    "weekRange": "39-42+",
+    "size": "20 - 22 inches",
+    "fruit": "Pumpkin",
+    "babyGrowth": "The baby is considered full-term and may arrive at any time. The lanugo, the fine hair covering the baby's body, begins to disappear. The baby continues to gain weight and grow.",
+    "motherSymptoms": "As the due date approaches, some women may experience signs of impending labor, such as the loss of the mucus plug, bloody show, or the onset of regular contractions. Discomfort due to the baby's size and pressure on the pelvis may increase."
+  }
+]
