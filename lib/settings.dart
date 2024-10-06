@@ -1,37 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'login.dart';  // Import your login screen here
 
+// This is the settings page where users can view and edit their account details
 class SettingsPage extends StatefulWidget {
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  // Controllers to manage user input for account details
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _babyNicknameController = TextEditingController();
-  bool isEditing = false;
+  bool isEditing = false; // Flag to indicate whether the user is in editing mode
 
   @override
   void initState() {
     super.initState();
-    // Initialize the controllers with existing data (this could be fetched from your backend)
+    // Initialize the controllers with existing data (could be fetched from your backend or Firebase)
     _nameController.text = 'moosa'; // Example data
     _babyNicknameController.text = 'Emman'; // Example data
   }
 
   @override
   void dispose() {
+    // Dispose of the controllers to free up resources
     _nameController.dispose();
     _babyNicknameController.dispose();
     super.dispose();
   }
 
+  // Function to log the user out
   Future<void> _logout() async {
     try {
+      // Perform Firebase sign-out (Google sign-out if applicable)
       await FirebaseAuth.instance.signOut();
-      // Navigate back to login screen or any other appropriate action
-      Navigator.of(context).pushReplacementNamed('/login');
+      
+      // Navigate back to login screen after successful logout
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => const LoginScreen(),  // Replace with your login screen
+        ),
+      );
     } catch (e) {
+      // Print any error that occurs during logout
       print("Error logging out: $e");
     }
   }
@@ -40,15 +52,16 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Account Details'),
+        title: const Text('Account Details'), // Title of the settings page
         actions: [
+          // Icon button to save or edit the account details based on the isEditing flag
           isEditing
               ? IconButton(
                   icon: const Icon(Icons.save),
                   onPressed: () {
                     setState(() {
-                      isEditing = false;
-                      // Save changes logic here
+                      isEditing = false; // Switch to non-editing mode
+                      // Add logic to save changes here (e.g., update Firebase or backend)
                     });
                   },
                 )
@@ -56,7 +69,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   icon: const Icon(Icons.edit),
                   onPressed: () {
                     setState(() {
-                      isEditing = true;
+                      isEditing = true; // Switch to editing mode
                     });
                   },
                 ),
@@ -66,26 +79,30 @@ class _SettingsPageState extends State<SettingsPage> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            // TextField to input the user's name
             TextField(
               controller: _nameController,
-              enabled: isEditing,
+              enabled: isEditing, // Only allow editing when in edit mode
               decoration: const InputDecoration(
-                labelText: 'Your name',
+                labelText: 'Your name',  // Label for the text field
                 border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 16.0),
+            // TextField to input the baby's nickname
             TextField(
               controller: _babyNicknameController,
-              enabled: isEditing,
+              enabled: isEditing,  // Only allow editing when in edit mode
               decoration: const InputDecoration(
-                labelText: 'Baby nickname',
+                labelText: 'Baby nickname', // Label for the text field
                 border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 16.0),
+            // GestureDetector to show the privacy policy dialog when tapped
             GestureDetector(
               onTap: () {
+                // Navigate to Privacy Policy screen
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     fullscreenDialog: true,
@@ -103,33 +120,35 @@ class _SettingsPageState extends State<SettingsPage> {
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Privacy policy'),
-                    Icon(Icons.arrow_forward),
+                    Text('Privacy policy'),  // Privacy policy label
+                    Icon(Icons.arrow_forward), // Icon indicating the navigation action
                   ],
                 ),
               ),
             ),
             const SizedBox(height: 16.0),
+            // Logout button that triggers the _logout function
             ElevatedButton(
-              onPressed: _logout,
+              onPressed: _logout,  // Calls the _logout method
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.pink, // Updated for logout button color
+                backgroundColor: Colors.pink, // Styling for the logout button
                 padding: const EdgeInsets.symmetric(
                     horizontal: 40.0, vertical: 16.0),
               ),
-              child: const Text('Log out'),
+              child: const Text('Log out'),  // Text displayed on the button
             ),
             const SizedBox(height: 16.0),
+            // Button for account deletion (logic needs to be implemented)
             OutlinedButton(
               onPressed: () {
-                // Handle account deletion logic
+                // Placeholder for account deletion logic
               },
               style: OutlinedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(
                     horizontal: 40.0, vertical: 16.0),
               ),
               child: const Text(
-                'Delete account permanently',
+                'Delete account permanently',  // Text displayed on the button
                 style: TextStyle(color: Colors.black54),
               ),
             ),
@@ -140,16 +159,17 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 }
 
+// Privacy policy dialog shown when the user taps on the privacy policy option
 class PrivacyPolicyDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Privacy Policy'),
+        title: const Text('Privacy Policy'),  // Title of the privacy policy dialog
         leading: IconButton(
-          icon: const Icon(Icons.close),
+          icon: const Icon(Icons.close),  // Close icon to dismiss the dialog
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context).pop();  // Close the dialog
           },
         ),
       ),
@@ -159,13 +179,14 @@ class PrivacyPolicyDialog extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Privacy policy content (replace with your actual privacy policy)
               Text(
                 'Privacy Policy',
                 style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 16.0),
               Text(
-                'Effective Date: [Insert Date]',
+                'Effective Date: [Insert Date]',  // Add the actual effective date of the policy
                 style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 16.0),
