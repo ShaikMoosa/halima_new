@@ -54,7 +54,7 @@ class HomeScreenState extends State<HomeScreen> {
         initialPageIndex = 0; // Set to the first page if out of range
       }
 
-      WidgetsBinding.instance?.addPostFrameCallback((_) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
         if (_pageController.hasClients) {
           _pageController.animateToPage(
             initialPageIndex,
@@ -138,7 +138,7 @@ class HomeScreenState extends State<HomeScreen> {
 class RegularWeekContainer extends StatelessWidget {
   final WeekData weekData;
 
-  const RegularWeekContainer({Key? key, required this.weekData}) : super(key: key);
+  const RegularWeekContainer({super.key, required this.weekData});
 
   @override
   Widget build(BuildContext context) {
@@ -206,7 +206,7 @@ class RegularWeekContainer extends StatelessWidget {
 class OverlayWeekContainer extends StatefulWidget {
   final WeekData weekData;
 
-  const OverlayWeekContainer({Key? key, required this.weekData}) : super(key: key);
+  const OverlayWeekContainer({super.key, required this.weekData});
 
   @override
   _OverlayWeekContainerState createState() => _OverlayWeekContainerState();

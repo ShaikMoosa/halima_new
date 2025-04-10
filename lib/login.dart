@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 0, 0, 0)),
+                    style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 0, 0, 0)),
                     onPressed: () async {
                       await FirebaseServices().signInWithGoogle();
                       // Ensure the widget is still mounted before using context

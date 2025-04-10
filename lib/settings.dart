@@ -4,6 +4,8 @@ import 'login.dart';  // Import your login screen here
 import 'button.dart'; // Import the MyButtons class
 
 class SettingsPage extends StatefulWidget {
+  const SettingsPage({super.key});
+
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
@@ -189,6 +191,8 @@ class _SettingsPageState extends State<SettingsPage> {
 }
 
 class PrivacyPolicyDialog extends StatelessWidget {
+  const PrivacyPolicyDialog({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

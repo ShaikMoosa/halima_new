@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "592511334882",
     "project_id": "halima-91d5d",
-    "storage_bucket": "halima-91d5d.appspot.com"
+    "storage_bucket": "halima-91d5d.firebasestorage.app"
   },
   "client": [
     {
@@ -14,13 +14,21 @@
       },
       "oauth_client": [
         {
-          "client_id": "592511334882-26dfe1aogmqj2edqt0ulmghl7qspbrnm.apps.googleusercontent.com",
+          "client_id": "592511334882-ohicuq2iugntr74vuoqqokpqtjovn9i5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.halima",
+            "certificate_hash": "57411abfdf9d8bfd260e989b39f6518e90e99005"
+          }
+        },
+        {
+          "client_id": "592511334882-u6ivup1kudi2tjmmu75bonb7ju059u68.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": ""
+          "current_key": "AIzaSyAXXH-loevdIQmtdO1WUzJjH6NdmuD3si0"
         }
       ],
       "services": {

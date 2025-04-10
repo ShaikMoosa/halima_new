@@ -47,6 +47,8 @@ class MyApp extends StatelessWidget {
 
 // Wrapper to check FirebaseAuth state
 class AuthWrapper extends StatelessWidget {
+  const AuthWrapper({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<User?>(
